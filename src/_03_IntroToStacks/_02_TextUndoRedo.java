@@ -1,7 +1,10 @@
 package _03_IntroToStacks;
 
+import java.util.Stack;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class _02_TextUndoRedo {
@@ -17,10 +20,20 @@ public class _02_TextUndoRedo {
 	 * off the Stack and added back to the JLabel.
 	 * 
 	 * */
-	JFrame frame = new JFrame();
-	JPanel panel = new JPanel();
 	
-	JLabel label = new JLabel();
+	Stack<Character> charsHolder = new Stack<Character>();
+	static JFrame frame = new JFrame();
+	static JPanel panel = new JPanel();
+	static JLabel label = new JLabel();
 	
-	
+	public static void main(String[] args) {
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		panel.add(label);
+		frame.add(panel);
+		frame.setSize(200, 200);
+		_02_TextUndoRedo frames = new _02_TextUndoRedo();
+		frame.pack();
+		frame.setVisible(true);	
+		JOptionPane.showMessageDialog(null, "Type. use backspace to delete and control to undo");
+	}
 }
